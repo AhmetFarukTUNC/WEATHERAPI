@@ -26,7 +26,7 @@ JSON parsing
 
 Clone the repository:
 
-git clone [](https://github.com/AhmetFarukTUNC/WEATHERAPI)
+git clone https://github.com/AhmetFarukTUNC/WEATHERAPI
 
 Navigate to the project folder:
 
@@ -44,4 +44,4 @@ python weather.py
 
 API Setup
 
-This project requires a weather API key. You can get one from [](https://www.weatherapi.com/) or another weather API provider. Add your API key in the script where necessary.
+This project requires a weather API key. You can get one from [ API-URL => ](https://www.weatherapi.com/) or another weather API provider. Add your API key in the script where necessary.
