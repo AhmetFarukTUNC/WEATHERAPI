@@ -1,7 +1,7 @@
 # 🌤 Weather Pro
 
-Weather Pro, kullanıcının girdiği şehir bilgisine göre **canlı hava durumu** verilerini gösteren modern ve şık bir web uygulamasıdır.  
-Veriler, arka planda **Weather API** üzerinden çekilir.
+Weather Pro is a **modern and stylish web application** that displays **live weather data** based on the city information entered by the user.
+The data is fetched in the background via the **Weather API**.
 
 ![Weather Pro Screenshot](https://github.com/AhmetFarukTUNC/WEATHERAPI/blob/main/w1.png)
 
@@ -11,27 +11,34 @@ Veriler, arka planda **Weather API** üzerinden çekilir.
 
 ---
 
-## 🚀 Özellikler
-- 🌍 Şehir adına göre anlık hava durumu sorgulama
-- 🌡️ Sıcaklık, hava durumu ve konum bilgisi
-- 📱 Mobil uyumlu ve responsive tasarım
-- 🎨 Modern, gradient tabanlı UI
-- ⚡ Hızlı ve hafif yapı (HTML, CSS, JavaScript)
+🚀 Features
 
----
+🌍 Real-time weather search by city name
 
-## 🛠 Teknolojiler
-Bu proje aşağıdaki teknolojiler ile geliştirilmiştir:
+🌡️ Temperature, weather condition, and location information
 
-- **HTML5**
-- **CSS3** (Modern UI, gradient arka plan, responsive yapı)
-- **JavaScript (Fetch API)**  
-- **Weather API** (Canlı hava durumu verileri için)
+📱 Mobile-friendly and responsive design
 
----
+🎨 Modern, gradient-based UI
 
-## 📂 Kurulum
+⚡ Fast and lightweight structure (HTML, CSS, JavaScript)
 
-1. Bu projeyi bilgisayarına klonla:
+🛠 Technologies
+
+This project is developed using the following technologies:
+
+HTML5
+
+CSS3 (Modern UI, gradient background, responsive layout)
+
+JavaScript (Fetch API)
+
+Weather API (For live weather data)
+
+📂 Installation
+
+1.)Clone this project to your computer:
+
+
    ```bash
-   git clone https://github.com/kullanici/weather-pro.git
+   git clonehttps://github.com/AhmetFarukTUNC/WEATHERAPI/
