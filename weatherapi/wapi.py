@@ -1,20 +1,45 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 
-url = "YOU MUST INPUT BASE URL OF YOUR API"
-access_key = "YOU MUST INPUT YOUR API KEY."
+app = Flask(__name__)
+CORS(app)  # Tüm origin'lere izin ver
 
-sehir = input("şehir: ")
+# WeatherAPI bilgileri
+URL = "http://api.weatherapi.com/v1/current.json"
+ACCESS_KEY = "90d85b1ded144b2eaff173943251408"
 
-response = requests.get(url, params= {
-    "key": access_key,
-    "q": sehir,
-    "lang": "ing"
-})
+@app.route("/weather", methods=["GET"])
+def get_weather():
+    city = request.args.get("city")
 
-sonuc = response.json()
+    if not city:
+        return jsonify({"error": "City parameter is required"}), 400
 
-sehir = sonuc["location"]["name"]
-havadurumu = sonuc["current"]["temp_c"]
-text = sonuc["current"]["condition"]["text"]
+    try:
+        # API isteği
+        response = requests.get(URL, params={
+            "key": ACCESS_KEY,
+            "q": city,
+            "lang": "en"  # İngilizce sonuçlar
+        })
+        data = response.json()
 
-print(f"{sehir} is {havadurumu} degree and  {text.lower()} at the moment.")
+        if "error" in data:
+            return jsonify({"error": data["error"]["message"]}), 400
+
+        # API'den gelen verileri düzenle
+        result = {
+            "city": data["location"]["name"],
+            "temperature_c": data["current"]["temp_c"],
+            "condition": data["current"]["condition"]["text"].lower()
+        }
+
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
